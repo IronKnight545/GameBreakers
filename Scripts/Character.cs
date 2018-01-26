@@ -25,8 +25,8 @@ public class Character : MonoBehaviour
     void Update()
     {
         float moveAxis = Input.GetAxis(moveInputAxis);
-    
-   
+
+
         
         Move();
         Turn(moveAxis);
