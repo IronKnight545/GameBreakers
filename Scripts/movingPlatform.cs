@@ -18,7 +18,7 @@ public class movingPlatform : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player"||other.tag=="cube")
         {
             other.transform.parent = null;
 
