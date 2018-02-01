@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Character : MonoBehaviour
 {
 
@@ -16,6 +17,7 @@ public class Character : MonoBehaviour
     private float jumpForce = 5.0f;
     int jumpCount=0;
     bool grounded;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,8 +27,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         float moveAxis = Input.GetAxis(moveInputAxis);
-
-
         
         Move();
         Turn(moveAxis);
@@ -56,11 +56,15 @@ public class Character : MonoBehaviour
             jumpCount++;
             rb.velocity = Vector3.up * jumpForce;
             grounded = false;
+           
         }
-        else if(grounded==true)
+        
+        if(grounded==true)
         {
             jumpCount = 0;
         }
+      
+        
 
 
     }
@@ -75,11 +79,22 @@ public class Character : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 90, 0);
         }
     }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag=="floor")
         {
             grounded = true;
         }
+      
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag=="floor")
+        {
+            jumpCount = 2;
+            grounded = false;
+        }
+    }
+
 }

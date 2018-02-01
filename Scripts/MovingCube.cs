@@ -7,46 +7,54 @@ public class MovingCube : MonoBehaviour
 
     Rigidbody rb;
     private bool isPlayer;
-	void Start ()
+    private string moveInputAxis = "Horizontal";
+
+    void Start ()
     {
 
         rb = GetComponent<Rigidbody>();
 	}
+     void Update()
+    {
+        RaycastHit hit;
+        Ray isFloor = new Ray(transform.position, Vector3.down);
 
+        if (Physics.Raycast(isFloor, out hit, 10))
+        {
+            if (hit.collider.tag != "floor")
+            {
+                rb.isKinematic = false;
+            }
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag != "floor")
-        {
-            rb.isKinematic = false;
-        }
-        else
-        {
-            rb.isKinematic = true;
-        }
+
+        float moveAxis = Input.GetAxis(moveInputAxis);
 
         if (other.tag=="Player")
         {
             isPlayer = true;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+
+
+                transform.Translate(new Vector3(-moveAxis, 0, 0) * 5 * Time.deltaTime);
+
+
+            }
+          
+
         }
-      
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-           
-
-                transform.Translate(new Vector3(-1, 0, 0) * 5* Time.deltaTime);
 
 
-
-            
-        }
-        else
-        {
-            transform.Translate(new Vector3(0, 0, 0) * 5 * Time.deltaTime);
-        }
-       
     }
     void OnTriggerExit(Collider other)
     {
+
+       
+
         if (other.tag.Equals("Player"))
         {
             isPlayer = false;

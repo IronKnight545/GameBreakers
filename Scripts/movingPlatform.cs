@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class movingPlatform : MonoBehaviour
 {
-    public Rigidbody player;
+
     
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+          
             other.transform.parent = transform;
         }
     }
