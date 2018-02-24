@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="kroki po lesie - wolne_data" version="1.3.0" audacityversion="2.2.2" sel0="1.0985883682" sel1="1.0985883682" vpos="0" h="0.0000000000" zoom="691.7968750000" rate="44100.0" snapto="off" selectionformat="gg:mm:ss + milisekundy" frequencyformat="Hz" bandwidthformat="oktawy">
+	<tags>
+		<tag name="Copyright message" value="Alan McKinney"/>
+		<tag name="ARTIST" value="Alan McKinney"/>
+		<tag name="Encoded by" value="Sound Grinder 3.5.6"/>
+	</tags>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_003_11140(1)" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="24160">
+				<waveblock start="0">
+					<simpleblockfile filename="e08082ed.au" len="24160" min="-0.884537" max="0.867692" rms="0.060511"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_003_11140(1)" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="24160">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808276.au" len="24160" min="-0.906732" max="0.881493" rms="0.069615"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_002_11139" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.54784580" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="25435">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808fa7.au" len="25435" min="-0.921196" max="0.734821" rms="0.043662"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_002_11139" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.54784580" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="25435">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808cbf.au" len="25435" min="-0.964904" max="0.747793" rms="0.046337"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_003_11140(1)" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="1.12460317" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="23600">
+				<waveblock start="0">
+					<simpleblockfile filename="e08087ac.au" len="23600" min="-0.884537" max="0.867692" rms="0.061225"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_003_11140(1)" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="1.12460317" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="23600">
+				<waveblock start="0">
+					<simpleblockfile filename="e080819a.au" len="23600" min="-0.906732" max="0.881493" rms="0.070434"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_004_11141" channel="0" linked="1" mute="0" solo="0" height="157" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="1.65975057" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="36199">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085e7.au" len="36199" min="-0.757947" max="0.90403" rms="0.0325"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="zapsplat_foley_footstep_forest_floor_crunchy_leaves_004_11141" channel="1" linked="0" mute="0" solo="0" height="143" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="1.65975057" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="36199">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808185.au" len="36199" min="-0.912805" max="0.918365" rms="0.041557"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
