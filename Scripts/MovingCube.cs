@@ -6,7 +6,8 @@ public class MovingCube : MonoBehaviour
 {
 
     Rigidbody rb;
-    private bool isPlayer;
+ 
+   
     private string moveInputAxis = "Horizontal";
 
     void Start ()
@@ -34,39 +35,43 @@ public class MovingCube : MonoBehaviour
 
         if (other.tag=="Player")
         {
-            isPlayer = true;
+
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
 
 
-                transform.Translate(new Vector3(-moveAxis, 0, 0) * 5 * Time.deltaTime);
+                transform.Translate(new Vector3(moveAxis, 0, 0) * 5 * Time.deltaTime);
 
 
             }
           
 
         }
+        if (other.tag == "cube")
+        {
+            rb.isKinematic = false;
+        }
 
 
     }
-    void OnTriggerExit(Collider other)
+
+   
+   
+    private void OnCollisionEnter(Collision collision)
     {
-
-       
-
-        if (other.tag.Equals("Player"))
+        if(collision.collider.tag =="cube")
         {
-            isPlayer = false;
+            rb.isKinematic = false;
         }
-
+      
     }
-    void OnGUI()
+    private void OnCollisionExit(Collision collision)
     {
-        if (isPlayer)
+        if (collision.collider.tag == "cube")
         {
-            GUI.contentColor = Color.black;
-            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 100, 20), "Hold L-Shift to push","");
+            rb.isKinematic = true;
         }
+
     }
 }

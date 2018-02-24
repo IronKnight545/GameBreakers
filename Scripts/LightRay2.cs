@@ -18,16 +18,17 @@ public class LightRay2 : MonoBehaviour
     }
     void LateUpdate()
     {
-
+     
         for (int i = 0; i < 50; i++)
         {
 
             RaycastHit hit;
+            
             Vector3 target = RandomSpotLightCirclePoint(lightt);
 
             Ray lightRay = new Ray(go.transform.position, target);
 
-
+            Debug.DrawRay(lightRay.origin, lightRay.direction);
 
             if (Physics.Raycast(lightRay, out hit, rayDistance))
             {
@@ -50,7 +51,7 @@ public class LightRay2 : MonoBehaviour
 
     Vector3 RandomSpotLightCirclePoint(Light spot)
     {
-        float radius = Mathf.Tan(Mathf.Deg2Rad * (spot.spotAngle - 7) / 2) * spot.range;
+        float radius = Mathf.Tan(Mathf.Deg2Rad * (spot.spotAngle -7) / 2) * spot.range;
         Vector2 circle = Random.insideUnitCircle * radius;
         Vector3 target = -transform.up * spot.range + spot.transform.rotation * new Vector3(circle.x, circle.y);
         return target;

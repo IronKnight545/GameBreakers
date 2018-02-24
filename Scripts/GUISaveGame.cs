@@ -11,7 +11,7 @@ public class GUISaveGame : MonoBehaviour
 
      void Update()
     {
-        Debug.Log(timer);
+
         if(Input.GetKeyDown(KeyCode.F))
            {
             isF = true;

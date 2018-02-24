@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95322192354370838}
   - component: {fileID: 64146471918449288}
   - component: {fileID: 65849897433020424}
-  - component: {fileID: 114161390073870306}
+  - component: {fileID: 114854238630157370}
   m_Layer: 0
   m_Name: MovingPlatform
   m_TagString: floor
@@ -96,7 +96,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 16670bfb58a3a6040a7855e4e80b2482, type: 3}
@@ -110,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0000002, y: 2.0000012, z: 21.025011}
-  m_Center: {x: 0, y: -0.00000051492134, z: 9.512504}
+  m_Size: {x: 1.8565043, y: 1.9690967, z: 1.4603367}
+  m_Center: {x: -0.012689635, y: -0.026687685, z: 2.1505847}
 --- !u!95 &95322192354370838
 Animator:
   serializedVersion: 3
@@ -129,7 +129,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114161390073870306
+--- !u!114 &114854238630157370
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,4 +140,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90892334e8ee34c4ab5743cbaa5633d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}

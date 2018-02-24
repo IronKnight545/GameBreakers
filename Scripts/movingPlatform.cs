@@ -8,7 +8,7 @@ public class movingPlatform : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player"||other.tag=="cube")
         {
           
             other.transform.parent = transform;
@@ -19,7 +19,7 @@ public class movingPlatform : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player"||other.tag=="cube")
+        if (other.tag == "Player"||other.tag=="cube")
         {
             other.transform.parent = null;
 

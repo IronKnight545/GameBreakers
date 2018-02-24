@@ -14,9 +14,24 @@ public class Character : MonoBehaviour
     public float fallMultipler = 2.5f;
     public float lowJumpMultipler = 2f;
 
-    private float jumpForce = 5.0f;
-    int jumpCount=0;
+    private float jumpForce = 4.0f;
+    private float jumpTime;
+    private int jumpCount;
     bool grounded;
+
+    public Animator animacja;
+    private bool isRunning;
+    bool isJump;
+    bool isJumpRunning;
+
+    public AudioSource dzwiek;
+    public AudioClip chodzenie_po_lesie;
+    public AudioClip chodzenie_w_budynku;
+    public AudioClip skok;
+
+    bool isBudynek;
+
+
 
     void Start()
     {
@@ -27,74 +42,154 @@ public class Character : MonoBehaviour
     void Update()
     {
         float moveAxis = Input.GetAxis(moveInputAxis);
-        
+       
         Move();
         Turn(moveAxis);
         Jump();
 
+      
+
     }
     private void Move()
     {
-        if (Input.GetButton(moveInputAxis))
+
+        animacja.SetBool("RunningStart", isRunning);
+       
+        if(Input.GetButtonDown(moveInputAxis))
         {
+            if(isBudynek==false)
+            {
+                dzwiek.clip = chodzenie_po_lesie;
+                dzwiek.Play();
+                dzwiek.volume = 0.1f;
+            }
+            if (isBudynek == true)
+            {
+                dzwiek.clip = chodzenie_w_budynku;
+                dzwiek.Play();
+                dzwiek.volume = 0.5f;
+            }
 
-            transform.Translate(new Vector3(0, 0, 1) * moveSpeed * Time.deltaTime);
-
-            
 
         }
+        if (Input.GetButton(moveInputAxis))
+        {
+            
+            transform.Translate(new Vector3(0, 0, 1) * moveSpeed * Time.deltaTime);
+            isRunning = true;
+          
+           
+        }
+        else
+        {
+       
+            isRunning = false;
+            dzwiek.Pause();
+        }
+     
+
+      
+        
     }
     private void Jump()
     {
+        animacja.SetBool("Jump",isJump);
+        animacja.SetBool("RunningJump", isJumpRunning);
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultipler - 1) * Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump")&&jumpCount<=1)
+        if (Input.GetButtonDown("Jump"))
         {
-            jumpCount++;
-            rb.velocity = Vector3.up * jumpForce;
-            grounded = false;
+            dzwiek.Stop();
+            dzwiek.PlayOneShot(skok);
+            if (grounded)
+            {
+                if (isRunning == false)
+                {
+                    isJump = true;
+                    isJumpRunning = false;
+                }
+                else
+                {
+                  
+                    isJump = false;
+                    isJumpRunning = true;
+
+                }
+                jumpCount++;
+                rb.velocity = Vector3.up * jumpForce;
+              
+            }
+           
            
         }
-        
-        if(grounded==true)
+      if(Input.GetButton("Jump"))
         {
-            jumpCount = 0;
+            isRunning = false;
+           
+            if (grounded)
+            {
+              
+
+                if (jumpTime < 0.5f)
+                {
+                   
+                 
+                    rb.velocity = Vector3.up * jumpForce;
+                    jumpTime += Time.deltaTime;
+                }
+                else
+                {
+                    isJumpRunning = false;
+                }
+            }
+          
+          
+          
         }
-      
-        
+    
 
-
+        if (Input.GetButtonUp("Jump"))
+        {
+                dzwiek.Play();
+                jumpTime = 0;
+                grounded = false;
+                isJump = false;
+                isJumpRunning= false;
+            
+                      
+        }
+          
     }
     private void Turn(float input)
     {
         if (input > 0)
         {
-            transform.rotation = Quaternion.Euler(0, -90, 0);
+            transform.rotation = Quaternion.Euler(0, 90, 0);
         }
         if (input < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 90, 0);
+            transform.rotation = Quaternion.Euler(0, -90, 0);
         }
     }
    
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(collision.collider.tag=="floor")
         {
             grounded = true;
+            isBudynek = false;
         }
-      
+        if (collision.collider.tag == "cube")
+           {
+                grounded = true;
+                isBudynek = true;
+           }
+     
+
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.tag=="floor")
-        {
-            jumpCount = 2;
-            grounded = false;
-        }
-    }
+   
 
 }

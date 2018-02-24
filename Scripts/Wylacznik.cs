@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class Wylacznik : MonoBehaviour {
 
-   public Light light1;
-   public Light light2;
-   public float time = 5.0f;
+
+    public int size;
+ 
+    public Light[] light1;
+ 
+    public float time = 5.0f;
     bool isTimer=false;
     private float timer = 0;
-     void Update()
-    {
 
-      
+
+    private bool isPlayer;
+    public Font fontt;
+
+    void Update()
+    {
+             
         if (isTimer==true)
         {
-
+            
             timer += Time.deltaTime;
            
             if (timer>=time)
             {
                 timer = 0;
                 LightRay.x = true;
-                light1.enabled = true;
-                light2.enabled = true;
+             
+                light1[size].enabled = true;
+
                 isTimer = false;
                 
                 
@@ -35,14 +43,49 @@ public class Wylacznik : MonoBehaviour {
         
         if(other.tag=="Player")
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            isPlayer = true;
+            if (Input.GetKeyDown(KeyCode.E))
             {
+               
+                    light1[size].enabled = false;
+                
+
                 isTimer = true;
                 LightRay.x = false;
-                light1.enabled = false;
-                light2.enabled = false;
+               
+                         
                
             }
         }
     }
+    void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag.Equals("Player"))
+        {
+            isPlayer = false;
+        }
+
+    }
+    void OnGUI()
+    {
+        if (isPlayer)
+        {
+            GUIStyle myButtonStyle = new GUIStyle();
+            myButtonStyle.fontSize = 20;
+
+
+
+            myButtonStyle.font = fontt;
+
+
+            myButtonStyle.normal.textColor = Color.white;
+
+
+
+
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 100, 20), "Press E to turn the light off", myButtonStyle);
+        }
+    }
+
 }

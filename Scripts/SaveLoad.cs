@@ -29,7 +29,7 @@ public  class SaveLoad:MonoBehaviour
         playerx = go.transform.position.x;
         playery = go.transform.position.y;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
 
             playerPosition.Add(playerx);

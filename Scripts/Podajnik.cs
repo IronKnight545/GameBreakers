@@ -18,7 +18,7 @@ public class Podajnik : MonoBehaviour {
             isPlayer = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Rigidbody clone = Instantiate(cube, new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z), transform.rotation) as Rigidbody;
+                Instantiate(cube, new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z), transform.rotation) ;
             }
         }
     }
