@@ -25,7 +25,7 @@ public class AD : MonoBehaviour
 
     }
     void OnGUI()
-{
+    {
     if (isPlayer)
     {
             GUIStyle myButtonStyle = new GUIStyle();
@@ -43,7 +43,7 @@ public class AD : MonoBehaviour
 
         GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 100, 20), "Use A to left, D to right", myButtonStyle);
     }
-}
+    }
 
 	
 }

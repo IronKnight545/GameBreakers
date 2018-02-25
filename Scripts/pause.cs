@@ -53,8 +53,12 @@ public class pause : MonoBehaviour
     {
      SceneManager.LoadScene("Menu");
     }
-    
-    
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
 }
 
 
