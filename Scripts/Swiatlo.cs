@@ -9,7 +9,7 @@ public class Swiatlo : MonoBehaviour
     public float time;
     public float breakk;
     private float timer;
-    bool isLight=true;
+    bool isLight;
 
      void Update()
     {

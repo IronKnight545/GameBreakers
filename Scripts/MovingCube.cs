@@ -68,7 +68,7 @@ public class MovingCube : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.collider.tag == "cube")
+        if (collision.collider.tag == "sciana")
         {
             rb.isKinematic = true;
         }
