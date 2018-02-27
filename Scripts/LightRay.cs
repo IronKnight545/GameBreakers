@@ -7,6 +7,7 @@ public class LightRay : MonoBehaviour
     public float rayDistance;
     public int damage;
     public GameObject go;
+    public GameObject lampka;
     public Light lightt;
   
     public static bool x;
@@ -15,6 +16,11 @@ public class LightRay : MonoBehaviour
     {
         
         x = true;
+    }
+    void Update()
+    {
+        transform.rotation = lampka.transform.rotation;
+        transform.position = lampka.transform.position;
     }
     void LateUpdate()
     {
@@ -50,7 +56,7 @@ public class LightRay : MonoBehaviour
 
     Vector3 RandomSpotLightCirclePoint(Light spot)
     {
-        float radius = Mathf.Tan(Mathf.Deg2Rad * (spot.spotAngle-7) / 2) * spot.range;
+        float radius = Mathf.Tan(Mathf.Deg2Rad * spot.spotAngle  ) * spot.range;
         Vector2 circle = Random.insideUnitCircle * radius;
         Vector3 target =  -transform.up *spot.range + spot.transform.rotation * new Vector3(circle.x, circle.y);
         return target;

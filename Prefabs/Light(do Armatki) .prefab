@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 33971707716210642}
   - component: {fileID: 65450564631928514}
   - component: {fileID: 23875279529532180}
-  - component: {fileID: 95076791164767518}
   - component: {fileID: 114974996622254278}
   m_Layer: 0
   m_Name: 'Light(do Armatki) '
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1709197913915782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.473, z: 0}
+  m_LocalPosition: {x: 0, y: 6.4, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4469572007460604}
@@ -81,15 +80,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856225662488528}
-  m_LocalRotation: {x: -0, y: -0, z: -0.4012804, w: 0.9159553}
-  m_LocalPosition: {x: -116, y: 3.89, z: 9.55}
-  m_LocalScale: {x: 0.19905825, y: 0.6665017, z: 0.24885648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.003, y: 0.03, z: -0.041}
+  m_LocalScale: {x: -0.25, y: -0.23, z: -0.17}
   m_Children:
   - {fileID: 4838664589635226}
   - {fileID: 4452516327810868}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -47.316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4838664589635226
 Transform:
   m_ObjectHideFlags: 1
@@ -151,28 +150,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856225662488528}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &95076791164767518
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856225662488528}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 673b0da1118df5b4886f307ea6719a62, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Size: {x: 4.1694717, y: 3.4095151, z: 7.93448}
+  m_Center: {x: -0.90407944, y: 0.3112622, z: -0.8673724}
 --- !u!108 &108814812947998788
 Light:
   m_ObjectHideFlags: 1
@@ -224,3 +206,6 @@ MonoBehaviour:
   damage: 500
   go: {fileID: 1709197913915782}
   lightt: {fileID: 108814812947998788}
+  lampka: {fileID: 0}
+  animacje: {fileID: 0}
+  rb: {fileID: 0}

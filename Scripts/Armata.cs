@@ -8,23 +8,30 @@ public class Armata : MonoBehaviour
     
     public Font fontt;
 
+   
+
+    private float angle;
+
     void Update()
     {
-       
+        Debug.Log(angle);
     }
     private void OnTriggerStay(Collider other)
     {
-        float angle = transform.rotation.y;
+       
     
         isPlayer = true;
-        if(Input.GetKey(KeyCode.W)&&angle<=0.99f)
+        if(Input.GetKey(KeyCode.W) &&angle<=40)
         {
+            angle++;
             transform.Rotate(new Vector3(0, 0, -1) * 50 * Time.deltaTime);
+          
             isPlayer = false;
           
         }
-        if (Input.GetKey(KeyCode.S) && angle >= 0.4f)
+        if (Input.GetKey(KeyCode.S) && angle>=-35)
         {
+            angle--;
             transform.Rotate(new Vector3(0, 0, 1) * 50 * Time.deltaTime);
             isPlayer = false;
           

@@ -13,7 +13,7 @@ public class Swiatlo : MonoBehaviour
 
      void Update()
     {
-        Debug.Log(timer);
+       
         timer += Time.deltaTime;
         if(timer>=time)
         {

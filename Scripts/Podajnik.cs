@@ -15,7 +15,7 @@ public class Podajnik : MonoBehaviour {
         if(other.tag=="Player")
         {
             isPlayer = true;
-            if (Input.GetKeyDown(KeyCode.E)&&counter>=0 )
+            if (Input.GetKeyDown(KeyCode.E)&&counter>=1 )
             {
                 Instantiate(cube, new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z), transform.rotation) ;
                 counter--;
