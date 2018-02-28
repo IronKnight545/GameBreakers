@@ -29,6 +29,8 @@ public class Character : MonoBehaviour
     public AudioClip chodzenie_w_budynku;
     public AudioClip skok;
 
+    private float timer;
+    public float time;
     bool isBudynek;
 
 
@@ -103,7 +105,7 @@ public class Character : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             dzwiek.Stop();
-            dzwiek.PlayOneShot(skok);
+        
             if (grounded)
             {
                 if (isRunning == false)
@@ -127,16 +129,18 @@ public class Character : MonoBehaviour
         }
       if(Input.GetButton("Jump"))
         {
-            isRunning = false;
-           
+            timer += Time.deltaTime;
+            if(timer<=time)
+            {
+                isRunning = false;
+            }
+            
             if (grounded)
             {
               
-
                 if (jumpTime < 0.5f)
                 {
-                   
-                 
+                                   
                     rb.velocity = Vector3.up * jumpForce;
                     jumpTime += Time.deltaTime;
                 }
@@ -154,6 +158,7 @@ public class Character : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
                 dzwiek.Play();
+                dzwiek.PlayOneShot(skok);
                 jumpTime = 0;
                 grounded = false;
                 isJump = false;
