@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swiatlo: {fileID: 198405110925895032}
   time: 3.5
-  breakk: 2
+  breakk: 3
 --- !u!198 &198405110925895032
 ParticleSystem:
   m_ObjectHideFlags: 1
