@@ -14,7 +14,7 @@ public class Armata : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(angle);
+       
     }
     private void OnTriggerStay(Collider other)
     {
@@ -49,34 +49,6 @@ public class Armata : MonoBehaviour
    
 
     
-    void OnGUI()
-    {
-        if (isPlayer)
-        {
-            GUIStyle myButtonStyle = new GUIStyle();
-            myButtonStyle.fontSize = 20;
-
-
-
-            myButtonStyle.font = fontt;
-
-
-            myButtonStyle.normal.textColor = Color.white;
-
-
-
-         
-                GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 100, 20), "Hold W to up, S to down", myButtonStyle);
-          
-          
-            
-               
-             
-            
-
-
-
-        }
-    }
+   
 
 }

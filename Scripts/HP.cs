@@ -19,7 +19,7 @@ public class HP : MonoBehaviour
        
         if (playerHp<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+            SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
             playerHp = 1000;
         }
     }

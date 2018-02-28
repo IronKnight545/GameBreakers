@@ -39,7 +39,7 @@ public class Swiatlo2 : MonoBehaviour
         {
             if (isLight == true)
             {
-                SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
             }
 
         }

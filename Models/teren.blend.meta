@@ -41,6 +41,7 @@ ModelImporter:
     2300012: Cube_001
     2300014: Cube_002
     2300016: Plane_001
+    2300018: //RootNode
     3300000: Plane
     3300002: podloga1
     3300004: podloga1_001
@@ -50,6 +51,7 @@ ModelImporter:
     3300012: Cube_001
     3300014: Cube_002
     3300016: Plane_001
+    3300018: //RootNode
     4300000: podloga1
     4300002: Plane
     4300004: podloga1_001

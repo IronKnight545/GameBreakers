@@ -9,7 +9,7 @@ public class Dead : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+            SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
         }
     }
 }

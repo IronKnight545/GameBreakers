@@ -11,7 +11,7 @@ public class Swiatlo3 : MonoBehaviour
         {
            
          
-                SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
             
 
         }
